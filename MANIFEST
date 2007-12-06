@@ -1,0 +1,15 @@
+bin/lwp_flash_lite_map_docomo.pl
+bin/make_map.pl
+bin/yaml.t
+Changes
+lib/HTTP/MobileAgent/Flash.pm
+lib/HTTP/MobileAgent/Flash/DoCoMoFlashMap.pm
+Makefile.PL
+MANIFEST
+META.yml			Module meta-data (added by MakeMaker)
+README
+t/00_compile.t
+t/01_flash.t
+t/02_yaml_syck.t
+t/03_yaml.t
+t/docomo.yaml

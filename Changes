@@ -1,0 +1,19 @@
+Revision history for Perl extension HTTP::MobileAgent::FlashLite
+
+0.03  Fri Jul 13 13:06:46 2007
+        - Fixed problem that lwp_flash_lite_map_docomo.pl programs had invalid url.
+        - Added D702I,D702IBCL,D702IF,D703I,D800IDS,D851IWM,D902IS,D903I,D903ITV,
+        F702ID,F703I,F882IES,F883I,F902IS,F903I,F903IBSC,F903IX,F904I,M702IG,
+        M702IS,N506ISII,N601I,N701IECO,N702ID,N702IS,N703I,N703ID,N902IL,N902IS,
+        N902IX,N903I,N904I,P506ICII,P702I,P702ID,P703I,P901ITV,P902IS,P903I,P903ITV,
+        P903IX,P904I,SA702I,SA800I,SH702ID,SH702IS,SH703I,SH902IS,SH902ISL,SH903I,
+        SH903ITV,SH904I,SO505I,SO702I,SO703I,SO704I,SO902I,SO902IWP,SO903I, SO903ITV 
+        in HTTP::MobileAgent::Flash::DoCoMoFlashMap (auto-generated)
+        (Thanks to Tokuhiro, Matsuno)
+
+0.02  Thu Feb 16 16:51:34 2006
+        - Change in method name. is_support() are now is_supported().
+        (Thanks to #catalyst-ja)
+
+0.01  Thu Feb 16 11:49:27 2006
+        - original version
