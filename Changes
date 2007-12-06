@@ -1,5 +1,13 @@
 Revision history for Perl extension HTTP::MobileAgent::FlashLite
 
+0.04  Thu Dec  6 17:37:44 2007
+        - Fixed problem that lwp_flash_lite_map_docomo.pl programs had invalid url.
+        - Added D704I,D904I,D905I,F704I,F883IES,F905I,L704I,N703I,N703IMYU,N704IMYU,
+        N905I,N905IMYU,P703IMYU,P704I,P704IMYU,P905I,SH704I,SH851I,SH905I,SO505I,
+        SO902IWP,SO902IWP+,SO905I
+        in HTTP::MobileAgent::Flash::DoCoMoFlashMap (auto-generated)
+        (Thanks to Tokuhiro, Matsuno)
+
 0.03  Fri Jul 13 13:06:46 2007
         - Fixed problem that lwp_flash_lite_map_docomo.pl programs had invalid url.
         - Added D702I,D702IBCL,D702IF,D703I,D800IDS,D851IWM,D902IS,D903I,D903ITV,
