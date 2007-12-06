@@ -1,74 +1,78 @@
 #!/usr/bin/perl
-
 use strict;
 use warnings;
-use Jcode;
+use utf8;
+use Encode;
 use LWP::UserAgent;
+use Web::Scraper;
+use URI;
 
 my $URL = 'http://www.nttdocomo.co.jp/service/imode/make/content/spec/flash/index.html';
 
-do_task(@ARGV);
+main(@ARGV);
 
-sub do_task {
-    my $ua = LWP::UserAgent->new;
-    my $res = $ua->get($URL);
-    unless ($res->is_success) {
-        die "Can't get $URL : " . $res->status_line;
-    }
+sub main {
+    my @args = @_;
 
-    my $html = Jcode->new($res->content)->euc;
+    my $stuff = (@args == 1) ? _slurp($args[0]) : URI->new($URL);
 
-    my @flash;
-    {
-        my $re = regexp_model();
-        while ($html =~ /$re/igs) {
-            push(@flash, {
-                model          => uc $1,
-                width          => $2,
-                height         => $3,
-                max_file_size  => $4,
-            });
-        }
-    }
+    my $versions = _scrape($stuff);
+    _output($versions);
+}
 
-    {
-        my $re = regexp_ver();
-        while ($html =~ /$re/igs) {
-            my($count, $version) = ($1, $2);
-            my $i = 1;
-            for my $f (@flash) {
-                last if ($i > $count);
-                unless ($f->{version}) {
-                    $i++;
-                    $f->{version} = $version;
-                }
+sub _scrape {
+    my $stuff = shift;
+
+    my $ret = scraper {
+        process '//div[position()<7]/div/div[@class="section"]', 'versions[]', scraper {
+            process '//h2/a/text()', 'version', ['TEXT', sub { s/^Flash Lite // }];
+            process '//tr[@class="acenter"]', 'models[]', [sub {
+                my $elem = $_;
+                my $tree = $elem->as_tree;
+                $_->delete for $tree->findnodes('//td[@class="brownLight acenter middle"]'); # remove series info.
+
+                scraper {
+                    process '//td[position()=1]', 'model', ['TEXT', sub { s/μ/myu/; s/\（.+）// }, sub { uc } ];
+                    process '//td[position()=2]', 'display', ['TEXT', sub { /(\d+)×(\d+)/; +{width=>$1, height => $2} }];
+                    process '//td[position()=4]', 'max_file_size', 'TEXT';
+                }->scrape($tree);
+            }];
+        };
+    }->scrape($stuff);
+
+    $ret->{versions};
+}
+
+sub _output {
+    my $versions = shift;
+
+    for my $version (@{$versions}) {
+        for my $model (@{$version->{models}}) {
+            printf "%s:\n", $model->{model};
+            printf "  version : %s\n", $version->{version};
+            for my $key (qw/width height/) {
+                printf "  $key : $model->{display}->{$key}\n";
             }
-        }
-    }
-
-    for my $f (@flash) {
-        printf "%s:\n", $f->{model};
-        for my $key (qw(version width height max_file_size)) {
-            printf "  %s : %s\n", $key, $f->{$key};
+            printf "  max_file_size : $model->{max_file_size}\n";
         }
     }
 }
 
-sub regexp_model {
-    return <<'REGEX';
-<TD><FONT SIZE="2">([A-Z]+\d+\w*).*?</FONT></TD>\s*
-<TD><FONT SIZE="2">(\d+)��(\d+)</FONT></TD>\s*
-<TD><FONT SIZE="2">.+?</FONT></TD>\s*
-<TD><FONT SIZE="2">(\d+)</FONT></TD>\s*
-<TD><FONT SIZE="2">.+?</FONT></TD>\s*
-<TD><FONT SIZE="2">.+?</FONT></TD>\s*
-REGEX
+sub _slurp {
+    my $fname = shift;
+
+    open my $fh, '<', $fname or die $!;
+    my $content = do { local $/; <$fh> };
+    close $fh;
+
+    decode('cp932', $content);
 }
 
-sub regexp_ver {
-    return <<'REGEX';
-<TR ALIGN="CENTER" BGCOLOR="#FFFFFF">\s*
-<TD ROWSPAN="(\d+)" BGCOLOR="#FFFFCC"><FONT SIZE="2" COLOR="#009900">(\d+\.\d+)</FONT></TD>\s*
-<TD ROWSPAN="\d+" BGCOLOR="#FFFFCC"><FONT SIZE="2" COLOR="#009900">\w+</FONT></TD>\s*
-REGEX
+sub HTML::Element::as_tree {
+    my $self = shift;
+
+    my $tree = HTML::TreeBuilder::XPath->new;
+    $tree->parse($self->as_HTML);
+    $tree;
 }
+

@@ -30,6 +30,7 @@ sub output_code {
     }
     $Data::Dumper::Indent = 1;
     $Data::Dumper::Terse  = 1;
+    $Data::Dumper::Sortkeys = 1;
     printf <<'TEMPLATE', $0, Data::Dumper->Dump([ $map ]);
 package HTTP::MobileAgent::Flash::DoCoMoFlashMap;
 # -------------------------------------------------------------------------

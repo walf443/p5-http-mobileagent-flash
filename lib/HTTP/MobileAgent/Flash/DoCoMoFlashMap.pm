@@ -29,707 +29,821 @@ BEGIN {
 }
 
 $FLASH_MAP ||= {
-  'N506IS' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '400',
-    'height' => '295'
-  },
-  'F883I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '256'
-  },
-  'F902IS' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '240'
-  },
-  'SH702IS' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '240'
-  },
-  'D903ITV' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '320'
-  },
-  'N900I' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '1024',
-    'height' => '269'
-  },
-  'SO903ITV' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '368'
-  },
-  'P702I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '270'
-  },
-  'D701I' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '240'
-  },
-  'SO703I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '368'
-  },
-  'P903I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '270'
-  },
-  'SH505I' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '200',
-    'height' => '252'
-  },
-  'N703ID' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '270'
-  },
-  'P900I' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '1024',
-    'height' => '266'
-  },
-  'SA800I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '252'
-  },
-  'D851IWM' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '320'
-  },
-  'P900IV' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '1024',
-    'height' => '266'
-  },
-  'M702IG' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '600',
-    'height' => '267'
-  },
-  'P851I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '270'
-  },
-  'P901I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '270'
-  },
-  'F900IT' => {
-    'width' => '230',
-    'version' => '1.0',
-    'max_file_size' => '1000',
-    'height' => '240'
-  },
   'D505I' => {
-    'width' => '240',
-    'version' => '1.0',
+    'height' => '270',
     'max_file_size' => '200',
-    'height' => '320'
-  },
-  'N601I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '270'
-  },
-  'D702I' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '240'
-  },
-  'P505IS' => {
-    'width' => '240',
     'version' => '1.0',
-    'max_file_size' => '404',
-    'height' => '266'
-  },
-  'P902I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '270'
-  },
-  'SO902IWP' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '256'
-  },
-  'D901IS' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '240'
-  },
-  'N505I' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '200',
-    'height' => '270'
-  },
-  'SO903I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '368'
-  },
-  'N506I' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '400',
-    'height' => '295'
-  },
-  'P904I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '350'
-  },
-  'SH703I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '240'
-  },
-  'D800IDS' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '240'
-  },
-  'N901IS' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '270'
-  },
-  'SA702I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '252'
-  },
-  'SH900I' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '1000',
-    'height' => '252'
-  },
-  'F903I' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '240'
-  },
-  'F901IC' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '240'
-  },
-  'SO506I' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '400',
-    'height' => '256'
-  },
-  'D703I' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '240'
-  },
-  'D702IF' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '240'
-  },
-  'SH902I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '240'
-  },
-  'F700I' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '240'
-  },
-  'N506ISII' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '400',
-    'height' => '295'
-  },
-  'N902IL' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '270'
-  },
-  'N901IC' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '270'
-  },
-  'N900IG' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '1024',
-    'height' => '269'
-  },
-  'SH506IC' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '300',
-    'height' => '252'
-  },
-  'P506ICII' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '404',
-    'height' => '266'
-  },
-  'F702ID' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '240'
-  },
-  'SH904I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '320'
-  },
-  'P702ID' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '270'
-  },
-  'N702ID' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '270'
-  },
-  'P703I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '270'
-  },
-  'SA700IS' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '252'
-  },
-  'SH901IC' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '2048',
-    'height' => '252'
-  },
-  'P903IX' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '270'
-  },
-  'P901ITV' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '270'
-  },
-  'SH700IS' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '252'
-  },
-  'SO506IS' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '400',
-    'height' => '256'
-  },
-  'F506I' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '300',
-    'height' => '268'
-  },
-  'D702IBCL' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '240'
-  },
-  'SH901IS' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '252'
-  },
-  'N701I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '270'
-  },
-  'SO505IS' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '400',
-    'height' => '256'
-  },
-  'N703I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '270'
-  },
-  'F700IS' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '240'
-  },
-  'N903I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '270'
-  },
-  'N700I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '270'
-  },
-  'D902IS' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '320'
-  },
-  'D506I' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '300',
-    'height' => '270'
-  },
-  'D902I' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '320'
-  },
-  'M702IS' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '600',
-    'height' => '267'
-  },
-  'D701IWM' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '240'
-  },
-  'SH902IS' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '240'
-  },
-  'D901I' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '240'
-  },
-  'N505IS' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '400',
-    'height' => '270'
-  },
-  'F900IC' => {
-    'width' => '230',
-    'version' => '1.0',
-    'max_file_size' => '1000',
-    'height' => '240'
-  },
-  'SO702I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '256'
+    'width' => '240'
   },
   'D505IS' => {
-    'width' => '240',
-    'version' => '1.0',
+    'height' => '270',
     'max_file_size' => '300',
-    'height' => '270'
-  },
-  'N900IS' => {
-    'width' => '240',
     'version' => '1.0',
-    'max_file_size' => '1024',
-    'height' => '269'
+    'width' => '240'
   },
-  'SH700I' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '252'
+  'D506I' => {
+    'height' => '270',
+    'max_file_size' => '300',
+    'version' => '1.0',
+    'width' => '240'
   },
-  'P701ID' => {
-    'width' => '240',
-    'version' => '1.1',
+  'D701I' => {
+    'height' => '240',
     'max_file_size' => '2000',
-    'height' => '270'
-  },
-  'F902I' => {
-    'width' => '230',
     'version' => '1.1',
+    'width' => '230'
+  },
+  'D701IWM' => {
+    'height' => '240',
     'max_file_size' => '2000',
-    'height' => '240'
-  },
-  'P505I' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '256',
-    'height' => '266'
-  },
-  'F903IBSC' => {
-    'width' => '230',
     'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '240'
+    'width' => '230'
   },
-  'SO506IC' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '400',
-    'height' => '256'
-  },
-  'N904I' => {
-    'width' => '240',
+  'D702I' => {
+    'height' => '240',
+    'max_file_size' => '2000',
     'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '352'
+    'width' => '230'
   },
-  'P903ITV' => {
-    'width' => '240',
+  'D702IBCL' => {
+    'height' => '240',
+    'max_file_size' => '2000',
     'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '350'
+    'width' => '230'
   },
-  'SH902ISL' => {
-    'width' => '240',
+  'D702IF' => {
+    'height' => '240',
+    'max_file_size' => '2000',
     'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '240'
+    'width' => '230'
   },
-  'N902I' => {
-    'width' => '240',
-    'version' => '1.1',
+  'D703I' => {
+    'height' => '240',
     'max_file_size' => '2048',
-    'height' => '270'
+    'version' => '1.1',
+    'width' => '230'
   },
-  'SO704I' => {
-    'width' => '240',
-    'version' => '1.1',
+  'D704I' => {
+    'height' => '240',
     'max_file_size' => '2048',
-    'height' => '368'
+    'version' => '1.1',
+    'width' => '230'
   },
-  'D903I' => {
-    'width' => '230',
+  'D800IDS' => {
+    'height' => '240',
+    'max_file_size' => '2000',
     'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '320'
+    'width' => '230'
+  },
+  'D851IWM' => {
+    'height' => '320',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '230'
   },
   'D900I' => {
-    'width' => '240',
-    'version' => '1.0',
+    'height' => '270',
     'max_file_size' => '1024',
-    'height' => '270'
-  },
-  'P901IS' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2000',
-    'height' => '270'
-  },
-  'F703I' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '240'
-  },
-  'F900I' => {
-    'width' => '230',
     'version' => '1.0',
-    'max_file_size' => '1000',
-    'height' => '240'
+    'width' => '240'
   },
-  'P902IS' => {
-    'width' => '240',
-    'version' => '1.1',
+  'D901I' => {
+    'height' => '240',
     'max_file_size' => '2000',
-    'height' => '270'
-  },
-  'F901IS' => {
-    'width' => '230',
     'version' => '1.1',
+    'width' => '230'
+  },
+  'D901IS' => {
+    'height' => '240',
     'max_file_size' => '2000',
-    'height' => '240'
-  },
-  'F505IGPS' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '300',
-    'height' => '268'
-  },
-  'SO902I' => {
-    'width' => '240',
     'version' => '1.1',
+    'width' => '230'
+  },
+  'D902I' => {
+    'height' => '320',
     'max_file_size' => '2000',
-    'height' => '256'
-  },
-  'SH903I' => {
-    'width' => '240',
     'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '320'
+    'width' => '230'
   },
-  'N902IS' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '270'
-  },
-  'N900IL' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '1024',
-    'height' => '269'
-  },
-  'SH903ITV' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '320'
-  },
-  'N702IS' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '270'
-  },
-  'P506IC' => {
-    'width' => '240',
-    'version' => '1.0',
-    'max_file_size' => '404',
-    'height' => '266'
-  },
-  'P700I' => {
-    'width' => '240',
-    'version' => '1.1',
+  'D902IS' => {
+    'height' => '320',
     'max_file_size' => '2000',
-    'height' => '270'
-  },
-  'SH702ID' => {
-    'width' => '240',
     'version' => '1.1',
+    'width' => '230'
+  },
+  'D903I' => {
+    'height' => '320',
     'max_file_size' => '2048',
-    'height' => '240'
+    'version' => '1.1',
+    'width' => '230'
+  },
+  'D903ITV' => {
+    'height' => '320',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '230'
+  },
+  'D904I' => {
+    'height' => '320',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'D905I' => {
+    'height' => '704',
+    'max_file_size' => '3072',
+    'version' => '3.0',
+    'width' => '480'
   },
   'F505I' => {
-    'width' => '240',
-    'version' => '1.0',
+    'height' => '268',
     'max_file_size' => '300',
-    'height' => '268'
+    'version' => '1.0',
+    'width' => '240'
   },
-  'N701IECO' => {
-    'width' => '240',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '270'
+  'F505IGPS' => {
+    'height' => '268',
+    'max_file_size' => '300',
+    'version' => '1.0',
+    'width' => '240'
   },
-  'F903IX' => {
-    'width' => '230',
-    'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '240'
+  'F506I' => {
+    'height' => '268',
+    'max_file_size' => '300',
+    'version' => '1.0',
+    'width' => '240'
   },
-  'N902IX' => {
-    'width' => '240',
+  'F700I' => {
+    'height' => '240',
+    'max_file_size' => '2000',
     'version' => '1.1',
-    'max_file_size' => '2048',
-    'height' => '270'
+    'width' => '230'
   },
-  'F904I' => {
-    'width' => '240',
+  'F700IS' => {
+    'height' => '240',
+    'max_file_size' => '2000',
     'version' => '1.1',
+    'width' => '230'
+  },
+  'F702ID' => {
+    'height' => '240',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '230'
+  },
+  'F703I' => {
+    'height' => '240',
     'max_file_size' => '2048',
-    'height' => '432'
+    'version' => '1.1',
+    'width' => '230'
+  },
+  'F704I' => {
+    'height' => '240',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '230'
   },
   'F882IES' => {
-    'width' => '240',
-    'version' => '1.1',
+    'height' => '256',
     'max_file_size' => '2000',
-    'height' => '256'
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'F883I' => {
+    'height' => '256',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'F883IES' => {
+    'height' => '256',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'F900I' => {
+    'height' => '240',
+    'max_file_size' => '1000',
+    'version' => '1.0',
+    'width' => '230'
+  },
+  'F900IC' => {
+    'height' => '240',
+    'max_file_size' => '1000',
+    'version' => '1.0',
+    'width' => '230'
+  },
+  'F900IT' => {
+    'height' => '240',
+    'max_file_size' => '1000',
+    'version' => '1.0',
+    'width' => '230'
+  },
+  'F901IC' => {
+    'height' => '240',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '230'
+  },
+  'F901IS' => {
+    'height' => '240',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '230'
+  },
+  'F902I' => {
+    'height' => '240',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '230'
+  },
+  'F902IS' => {
+    'height' => '240',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '230'
+  },
+  'F903I' => {
+    'height' => '240',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '230'
+  },
+  'F903IBSC' => {
+    'height' => '240',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '230'
+  },
+  'F903IX' => {
+    'height' => '240',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '230'
+  },
+  'F904I' => {
+    'height' => '352',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'F905I' => {
+    'height' => '704',
+    'max_file_size' => '3072',
+    'version' => '3.0',
+    'width' => '480'
+  },
+  'L704I' => {
+    'height' => '280',
+    'max_file_size' => '3072',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'M702IG' => {
+    'height' => '267',
+    'max_file_size' => '600',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'M702IS' => {
+    'height' => '267',
+    'max_file_size' => '600',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N505I' => {
+    'height' => '270',
+    'max_file_size' => '200',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'N505IS' => {
+    'height' => '270',
+    'max_file_size' => '400',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'N506I' => {
+    'height' => '295',
+    'max_file_size' => '400',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'N506IS' => {
+    'height' => '295',
+    'max_file_size' => '400',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'N506ISII' => {
+    'height' => '295',
+    'max_file_size' => '400',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'N601I' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N700I' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N701I' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N701IECO' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N702ID' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N702IS' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N703ID' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N703IMYU' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N704IMYU' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N900I' => {
+    'height' => '269',
+    'max_file_size' => '1024',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'N900IG' => {
+    'height' => '269',
+    'max_file_size' => '1024',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'N900IL' => {
+    'height' => '269',
+    'max_file_size' => '1024',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'N900IS' => {
+    'height' => '269',
+    'max_file_size' => '1024',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'N901IC' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N901IS' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N902I' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N902IL' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N902IS' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N902IX' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N903I' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N904I' => {
+    'height' => '352',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'N905I' => {
+    'height' => '640',
+    'max_file_size' => '3072',
+    'version' => '3.0',
+    'width' => '480'
+  },
+  'N905IMYU' => {
+    'height' => '640',
+    'max_file_size' => '3072',
+    'version' => '3.0',
+    'width' => '480'
+  },
+  'P505I' => {
+    'height' => '266',
+    'max_file_size' => '256',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'P505IS' => {
+    'height' => '266',
+    'max_file_size' => '404',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'P506IC' => {
+    'height' => '266',
+    'max_file_size' => '404',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'P506ICII' => {
+    'height' => '266',
+    'max_file_size' => '404',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'P700I' => {
+    'height' => '270',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P701ID' => {
+    'height' => '270',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P702I' => {
+    'height' => '270',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P702ID' => {
+    'height' => '270',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P703I' => {
+    'height' => '270',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P703IMYU' => {
+    'height' => '270',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P704I' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P704IMYU' => {
+    'height' => '270',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P851I' => {
+    'height' => '270',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P900I' => {
+    'height' => '266',
+    'max_file_size' => '1024',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'P900IV' => {
+    'height' => '266',
+    'max_file_size' => '1024',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'P901I' => {
+    'height' => '270',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P901IS' => {
+    'height' => '270',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P901ITV' => {
+    'height' => '270',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P902I' => {
+    'height' => '270',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P902IS' => {
+    'height' => '270',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P903I' => {
+    'height' => '270',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P903ITV' => {
+    'height' => '350',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P903IX' => {
+    'height' => '270',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P904I' => {
+    'height' => '350',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'P905I' => {
+    'height' => '700',
+    'max_file_size' => '3072',
+    'version' => '3.0',
+    'width' => '480'
+  },
+  'SA700IS' => {
+    'height' => '252',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SA702I' => {
+    'height' => '252',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SA800I' => {
+    'height' => '252',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SH505I' => {
+    'height' => '252',
+    'max_file_size' => '200',
+    'version' => '1.0',
+    'width' => '240'
   },
   'SH505IS' => {
-    'width' => '240',
-    'version' => '1.0',
+    'height' => '252',
     'max_file_size' => '300',
-    'height' => '252'
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'SH506IC' => {
+    'height' => '252',
+    'max_file_size' => '300',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'SH700I' => {
+    'height' => '252',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SH700IS' => {
+    'height' => '252',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SH702ID' => {
+    'height' => '240',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SH702IS' => {
+    'height' => '240',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SH703I' => {
+    'height' => '240',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SH704I' => {
+    'height' => '320',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SH851I' => {
+    'height' => '252',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SH900I' => {
+    'height' => '252',
+    'max_file_size' => '1000',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'SH901IC' => {
+    'height' => '252',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SH901IS' => {
+    'height' => '252',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SH902I' => {
+    'height' => '240',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SH902IS' => {
+    'height' => '240',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SH902ISL' => {
+    'height' => '240',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SH903I' => {
+    'height' => '320',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SH903ITV' => {
+    'height' => '320',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SH904I' => {
+    'height' => '320',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SH905I' => {
+    'height' => '640',
+    'max_file_size' => '3072',
+    'version' => '3.0',
+    'width' => '480'
+  },
+  'SO505I' => {
+    'height' => '240',
+    'max_file_size' => '200',
+    'version' => '1.0',
+    'width' => '256'
+  },
+  'SO505IS' => {
+    'height' => '256',
+    'max_file_size' => '400',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'SO506I' => {
+    'height' => '256',
+    'max_file_size' => '400',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'SO506IC' => {
+    'height' => '256',
+    'max_file_size' => '400',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'SO506IS' => {
+    'height' => '256',
+    'max_file_size' => '400',
+    'version' => '1.0',
+    'width' => '240'
+  },
+  'SO702I' => {
+    'height' => '256',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SO703I' => {
+    'height' => '368',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SO704I' => {
+    'height' => '368',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SO902I' => {
+    'height' => '256',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SO902IWP+' => {
+    'height' => '256',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SO903I' => {
+    'height' => '368',
+    'max_file_size' => '2000',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SO903ITV' => {
+    'height' => '368',
+    'max_file_size' => '2048',
+    'version' => '1.1',
+    'width' => '240'
+  },
+  'SO905I' => {
+    'height' => '736',
+    'max_file_size' => '3072',
+    'version' => '3.0',
+    'width' => '480'
   }
 }
 ;
