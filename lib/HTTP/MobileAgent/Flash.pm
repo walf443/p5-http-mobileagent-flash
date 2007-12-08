@@ -59,10 +59,10 @@ sub is_flash {
 #
 # -------------------------------------------------------------------------
 package HTTP::MobileAgent::DoCoMo;
-use HTTP::MobileAgent::Flash::DoCoMoFlashMap qw($FLASH_MAP);
+use HTTP::MobileAgent::Flash::DoCoMoFlashMap;
 sub _make_flash {
     my $self = shift;
-    my $flash = $FLASH_MAP->{uc($self->model)};
+    my $flash = $HTTP::MobileAgent::Flash::DoCoMoFlashMap::FLASH_MAP->{uc($self->model)};
     return HTTP::MobileAgent::Flash->new(
         %$flash
     );
@@ -73,6 +73,7 @@ sub _make_flash {
 #
 # -------------------------------------------------------------------------
 package HTTP::MobileAgent::EZweb;
+use HTTP::MobileAgent::Flash::EZWebFlashMap;
 sub _make_flash {
     my $self = shift;
 
@@ -82,7 +83,7 @@ sub _make_flash {
         %flash = (
             # http://www.au.kddi.com/ezfactory/mm/flash01.html
             max_file_size => $self->is_win ? 100 : 48,
-            version  => 1.1,
+            version  => $HTTP::MobileAgent::Flash::EZWebFlashMap::FLASH_MAP->{uc $self->model} || -1,
             width    => $self->display->width,  # FIXME 待ち受けのサイズで
             height   => $self->display->height,
         );

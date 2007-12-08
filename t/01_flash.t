@@ -1,5 +1,5 @@
 use strict;
-use Test::More tests => 25;
+use Test::More tests => 32;
 
 use_ok 'HTTP::MobileAgent';
 use_ok 'HTTP::MobileAgent::Flash';
@@ -25,6 +25,16 @@ my @TESTS = (
 			HTTP_X_UP_DEVCAP_ISCOLOR      => 0,
 		},
       	{version => 1.1, max_file_size => 100, width => 240, height => 268}
+	],
+	[
+		{
+	    	HTTP_USER_AGENT => 'KDDI-MA32 UP.Browser/6.2.0.12.1.4 (GUI) MMP/2.0',
+			HTTP_ACCEPT => 'application/x-shockwave-flash',
+			HTTP_X_UP_DEVCAP_SCREENPIXELS => '240,268',
+		    HTTP_X_UP_DEVCAP_SCREENDEPTH  => '1',
+			HTTP_X_UP_DEVCAP_ISCOLOR      => 0,
+		},
+      	{version => '2.0', max_file_size => 100, width => 240, height => 268}
 	],
 );
 
