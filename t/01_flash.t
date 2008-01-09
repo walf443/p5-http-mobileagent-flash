@@ -24,7 +24,7 @@ my @TESTS = (
             HTTP_X_UP_DEVCAP_SCREENDEPTH  => '1',
             HTTP_X_UP_DEVCAP_ISCOLOR      => 0,
         },
-        {version => 1.1, max_file_size => 100, width => 240, height => 268}
+        {version => 1.1, max_file_size => 100, width => 240, height => 320}
     ],
     [
         {
@@ -34,7 +34,7 @@ my @TESTS = (
             HTTP_X_UP_DEVCAP_SCREENDEPTH  => '1',
             HTTP_X_UP_DEVCAP_ISCOLOR      => 0,
         },
-        {version => '2.0', max_file_size => 100, width => 240, height => 268}
+        {version => '2.0', max_file_size => 100, width => 240, height => 400}
     ],
 );
 

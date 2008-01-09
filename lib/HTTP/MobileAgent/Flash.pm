@@ -2,23 +2,59 @@ package HTTP::MobileAgent::Flash;
 use strict;
 use warnings;
 use vars qw($VERSION);
-$VERSION = '0.04';
+$VERSION = '0.05';
+
+use HTTP::MobileAgent;
+use HTTP::MobileAgent::Flash::DoCoMoFlashMap;
+use HTTP::MobileAgent::Flash::EZWebFlashMap;
 
 use Carp;
 
 use base qw(Class::Accessor);
 __PACKAGE__->mk_ro_accessors(qw(max_file_size version width height));
 
-sub new {
+sub import {
     my $class = shift;
-    my %data  = @_;
-    return bless {
-        max_file_size => -1,
-        version       => -1,
-        width         => -1,
-        height        => -1,
-        %data
-    }, $class;
+    no strict 'refs';
+    *{"HTTP\::MobileAgent\::flash"}       = \&_flash;
+    *{"HTTP\::MobileAgent\::is_flash"}    = \&_is_flash;
+}
+
+sub _flash {
+    my $self = shift;
+    unless ($self->{flash}) {
+        $self->{flash} = HTTP::MobileAgent::Flash->new($self);
+    }
+    return $self->{flash};
+}
+
+sub _is_flash {
+    my $self = shift;
+    return ($self->flash->version > 0)? 1 : 0;
+}
+
+sub new {
+    my ($class, $agent) = @_;
+
+    my $map;
+    if ($agent->is_docomo) {
+        $map = $HTTP::MobileAgent::Flash::DoCoMoFlashMap::FLASH_MAP->{uc($agent->model)};
+    }
+    elsif ($agent->is_ezweb) {
+        $map = $HTTP::MobileAgent::Flash::EZWebFlashMap::FLASH_MAP->{uc($agent->model)};
+    }
+
+    if ($map) {
+        return bless $map, $class;
+    }
+    else {
+        return bless {
+            max_file_size => -1,
+            version       => -1,
+            width         => -1,
+            height        => -1,
+        }, $class;
+    }
 }
 
 sub is_supported {
@@ -29,67 +65,6 @@ sub is_supported {
 
     $version =~ s/Lite//ig;
     return ($version <= $self->version)? 1 : 0;
-}
-
-
-# -------------------------------------------------------------------------
-#  HTTP::MobileAgent
-#
-# -------------------------------------------------------------------------
-package HTTP::MobileAgent;
-sub flash {
-    my $self = shift;
-    unless ($self->{flash}) {
-        if ($self->can("_make_flash")) {
-            $self->{flash} = $self->_make_flash;
-        } else {
-            $self->{flash} = HTTP::MobileAgent::Flash->new();
-        }
-    }
-    return $self->{flash};
-}
-
-sub is_flash {
-    my $self = shift;
-    return ($self->flash->version > 0)? 1 : 0;
-}
-
-# -------------------------------------------------------------------------
-# HTTP::MobileAgent::DoCoMo
-#
-# -------------------------------------------------------------------------
-package HTTP::MobileAgent::DoCoMo;
-use HTTP::MobileAgent::Flash::DoCoMoFlashMap;
-sub _make_flash {
-    my $self = shift;
-    my $flash = $HTTP::MobileAgent::Flash::DoCoMoFlashMap::FLASH_MAP->{uc($self->model)};
-    return HTTP::MobileAgent::Flash->new(
-        %$flash
-    );
-}
-
-# -------------------------------------------------------------------------
-# HTTP::MobileAgent::EzWeb
-#
-# -------------------------------------------------------------------------
-package HTTP::MobileAgent::EZweb;
-use HTTP::MobileAgent::Flash::EZWebFlashMap;
-sub _make_flash {
-    my $self = shift;
-
-    my %flash;
-    my $accept = $self->get_header('accept') || '';
-    if ($accept =~ m[application/x-shockwave-flash]) {
-        %flash = (
-            # http://www.au.kddi.com/ezfactory/mm/flash01.html
-            max_file_size => $self->is_win ? 100 : 48,
-            version  => $HTTP::MobileAgent::Flash::EZWebFlashMap::FLASH_MAP->{uc $self->model} || -1,
-            width    => $self->display->width,  # FIXME 待ち受けのサイズで
-            height   => $self->display->height,
-        );
-    }
-
-    return HTTP::MobileAgent::Flash->new(%flash);
 }
 
 1;
