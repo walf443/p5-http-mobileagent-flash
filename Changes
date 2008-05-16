@@ -1,5 +1,13 @@
 Revision history for Perl extension HTTP::MobileAgent::FlashLite
 
+0.06_1
+    - Added D705I,D705IMYU,F705I,F883IESS,F884I,F905IBIZ,L705I,L705IX,
+    N705I,N705IMYU,P705I,P705ICL,P705IMYU,P905ITV,SH705I,SH705III,SH905ITV,
+    SO705I,SO905ICS
+    in HTTP::MobileAgent::Flash::DoCoMoFlashMap (auto-generated)
+    - Added W61S,W61SA,W62S,W61T,W61H,W62SA,W61PT,W61P,W61CA,W61K,W54SA
+    in HTTP::MobileAgent::Flash::EZWebFlashMap (auto-generated)
+
 0.05  Wed Jan  9 14:40:47 2008
     - FlashLite1.1 and FlashLite2.0 can have been distinguished in EZWeb. 
     (Thanks to Tokuhiro, Matsuno)

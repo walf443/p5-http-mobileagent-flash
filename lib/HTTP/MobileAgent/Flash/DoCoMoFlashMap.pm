@@ -91,6 +91,18 @@ $FLASH_MAP ||= {
         height         => '320',
         max_file_size  => '2048',
     },
+    'D705I' => {
+        version        => '1.1',
+        width          => '240',
+        height         => '400',
+        max_file_size  => '2048',
+    },
+    'D705IMYU' => {
+        version        => '1.1',
+        width          => '240',
+        height         => '320',
+        max_file_size  => '2048',
+    },
     'D800IDS' => {
         version        => '1.1',
         width          => '240',
@@ -205,6 +217,12 @@ $FLASH_MAP ||= {
         height         => '320',
         max_file_size  => '2048',
     },
+    'F705I' => {
+        version        => '1.1',
+        width          => '240',
+        height         => '432',
+        max_file_size  => '2048',
+    },
     'F801I' => {
         version        => '1.1',
         width          => '240',
@@ -228,6 +246,18 @@ $FLASH_MAP ||= {
         width          => '240',
         height         => '320',
         max_file_size  => '2000',
+    },
+    'F883IESS' => {
+        version        => '1.1',
+        width          => '240',
+        height         => '320',
+        max_file_size  => '2000',
+    },
+    'F884I' => {
+        version        => '3.0',
+        width          => '240',
+        height         => '432',
+        max_file_size  => '3072',
     },
     'F900I' => {
         version        => '1.0',
@@ -301,7 +331,25 @@ $FLASH_MAP ||= {
         height         => '864',
         max_file_size  => '3072',
     },
+    'F905IBIZ' => {
+        version        => '3.0',
+        width          => '480',
+        height         => '864',
+        max_file_size  => '3072',
+    },
     'L704I' => {
+        version        => '1.1',
+        width          => '240',
+        height         => '320',
+        max_file_size  => '3072',
+    },
+    'L705I' => {
+        version        => '1.1',
+        width          => '240',
+        height         => '320',
+        max_file_size  => '3072',
+    },
+    'L705IX' => {
         version        => '1.1',
         width          => '240',
         height         => '320',
@@ -402,6 +450,18 @@ $FLASH_MAP ||= {
         width          => '240',
         height         => '345',
         max_file_size  => '2048',
+    },
+    'N705I' => {
+        version        => '3.0',
+        width          => '240',
+        height         => '427',
+        max_file_size  => '3072',
+    },
+    'N705IMYU' => {
+        version        => '3.0',
+        width          => '240',
+        height         => '427',
+        max_file_size  => '3072',
     },
     'N900I' => {
         version        => '1.0',
@@ -565,6 +625,24 @@ $FLASH_MAP ||= {
         height         => '320',
         max_file_size  => '2048',
     },
+    'P705I' => {
+        version        => '3.0',
+        width          => '240',
+        height         => '427',
+        max_file_size  => '3072',
+    },
+    'P705ICL' => {
+        version        => '3.0',
+        width          => '240',
+        height         => '427',
+        max_file_size  => '3072',
+    },
+    'P705IMYU' => {
+        version        => '3.0',
+        width          => '240',
+        height         => '427',
+        max_file_size  => '3072',
+    },
     'P851I' => {
         version        => '1.1',
         width          => '240',
@@ -643,6 +721,12 @@ $FLASH_MAP ||= {
         height         => '854',
         max_file_size  => '3072',
     },
+    'P905ITV' => {
+        version        => '3.0',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '3072',
+    },
     'SA700IS' => {
         version        => '1.1',
         width          => '240',
@@ -715,6 +799,18 @@ $FLASH_MAP ||= {
         height         => '400',
         max_file_size  => '2048',
     },
+    'SH705I' => {
+        version        => '1.1',
+        width          => '240',
+        height         => '400',
+        max_file_size  => '2048',
+    },
+    'SH705III' => {
+        version        => '1.1',
+        width          => '240',
+        height         => '400',
+        max_file_size  => '2048',
+    },
     'SH851I' => {
         version        => '1.1',
         width          => '240',
@@ -781,6 +877,12 @@ $FLASH_MAP ||= {
         height         => '854',
         max_file_size  => '3072',
     },
+    'SH905ITV' => {
+        version        => '3.0',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '3072',
+    },
     'SO505I' => {
         version        => '1.0',
         width          => '256',
@@ -829,6 +931,12 @@ $FLASH_MAP ||= {
         height         => '432',
         max_file_size  => '2048',
     },
+    'SO705I' => {
+        version        => '3.0',
+        width          => '240',
+        height         => '427',
+        max_file_size  => '3072',
+    },
     'SO902I' => {
         version        => '1.1',
         width          => '240',
@@ -854,6 +962,12 @@ $FLASH_MAP ||= {
         max_file_size  => '2048',
     },
     'SO905I' => {
+        version        => '3.0',
+        width          => '480',
+        height         => '864',
+        max_file_size  => '3072',
+    },
+    'SO905ICS' => {
         version        => '3.0',
         width          => '480',
         height         => '864',
