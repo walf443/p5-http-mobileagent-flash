@@ -183,7 +183,6 @@ sub make_map_ezweb {
     return  $flash_map;
 }
 
-# どの環境で、pmファイルを作っても順番が固定になるようにしたい。
 # FIXME: ここまでヤルなら TT 使ったほうがよくね?
 sub output_pm {
     my $map = shift;
