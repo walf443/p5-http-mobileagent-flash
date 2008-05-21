@@ -3,9 +3,14 @@
 use strict;
 use warnings;
 
+use HTTP::MobileAgent;
+
 use WWW::MobileCarrierJP::DoCoMo::Flash;
 use WWW::MobileCarrierJP::EZWeb::DeviceID;
 use WWW::MobileCarrierJP::EZWeb::Model;
+use WWW::MobileCarrierJP::ThirdForce::UserAgent;
+use WWW::MobileCarrierJP::ThirdForce::Service;
+
 use Getopt::Long;
 use Pod::Usage;
 use Data::Dumper;
@@ -64,8 +69,9 @@ GetOptions(
 pod2usage(1) if $HELP;
 
 my $map;
-if    ($SCRAPE_CARRIER eq 'docomo') { $map = make_map_docomo() }
-elsif ($SCRAPE_CARRIER eq 'ezweb')  { $map = make_map_ezweb()  }
+if    ($SCRAPE_CARRIER eq 'docomo')   { $map = make_map_docomo()   }
+elsif ($SCRAPE_CARRIER eq 'ezweb')    { $map = make_map_ezweb()    }
+elsif ($SCRAPE_CARRIER eq 'softbank') { $map = make_map_softbank() }
 else { pod2usage(2) }
 
 if    ($OUTPUT_TYPE eq 'pm' )   { output_pm($map)   }
@@ -183,6 +189,63 @@ sub make_map_ezweb {
     return  $flash_map;
 }
 
+sub make_map_softbank {
+
+    # - ThirdForce::Service, ThirdForce::UserAgent で取れる model 名が同一
+    #    機種で異なる場合がある。(SoftBankのサイトが異なってる)
+    #    Service では 913SH, 913SH G が2レコード
+    #    UserAgentでは 913SH/913SH G で1レコード
+    #
+    # - ThirdForce::Service, ThirdForce::UserAgent で取れる model 名が
+    #    HTTP::MobileAgent の model と異なる場合が上記以外である。
+    #    SoftBankのサイトでは    703SHf
+    #    HTTP::MobileAgent では V703SHf
+    #
+    my $flash_map;
+    for my $device (@{WWW::MobileCarrierJP::ThirdForce::Service->scrape()}) {
+        if (
+            !$device->{flashlite}                  or
+            $device->{flashlite} !~ /^\d+(\.\d+)/  or
+            $device->{model}     !~ /^[\w\-]+$/
+        ) {
+            next;
+        }
+
+        $flash_map->{$device->{model}} = {
+            version  => $device->{flashlite},
+
+            # メディア編のPDF(P170)から
+            # http://creation.mb.softbank.jp/doc_tool/web_doc_tool.html
+            max_file_size => ($device->{flashlite} eq '1.1') ? 100 : 150,
+        };
+    }
+
+    for my $device (@{WWW::MobileCarrierJP::ThirdForce::UserAgent->scrape()} ) {
+        $device->{user_agent} =~ s/^\s+//g;
+        $device->{user_agent} =~ s/\s+$//g;
+        my $agent = HTTP::MobileAgent->new($device->{user_agent});
+
+        my $model     = $agent->{model};
+        my $model_aho = $agent->{model};
+           $model_aho =~ s/^.//;
+        if ($flash_map->{$model}) {
+            ;
+        }
+        elsif ($flash_map->{$model_aho}) {
+            $flash_map->{$model} = $flash_map->{$model_aho};
+            delete $flash_map->{$model_aho};
+        }
+        else {
+            next;
+        }
+
+        $flash_map->{$model}->{width}  = $device->{display}->{width};
+        $flash_map->{$model}->{height} = $device->{display}->{height};
+    }
+
+    return  $flash_map;
+}
+
 # FIXME: ここまでヤルなら TT 使ったほうがよくね?
 sub output_pm {
     my $map = shift;
@@ -197,6 +260,10 @@ sub output_pm {
     elsif ($SCRAPE_CARRIER eq 'ezweb') { 
         $tmpl =~ s/{{MODULE_NAME}}/HTTP::MobileAgent::Flash::EZWebFlashMap/g;
         $tmpl =~ s/{{ENV_FLASH_MAP}}/EZWEB_FLASH_MAP/g;
+    }
+    elsif ($SCRAPE_CARRIER eq 'softbank') { 
+        $tmpl =~ s/{{MODULE_NAME}}/HTTP::MobileAgent::Flash::SoftBankFlashMap/g;
+        $tmpl =~ s/{{ENV_FLASH_MAP}}/SOFTBANK_FLASH_MAP/g;
     }
 
     print $tmpl;
@@ -231,7 +298,7 @@ __END__
 
 =head1 SYNOPSIS
 
-make_map_flash_lite.pl --output=[pm|yaml] --carrier=[docomo|ezweb]
+make_map_flash_lite.pl --output=[pm|yaml] --carrier=[docomo|ezweb|softbank]
 
 =cut
 1;
