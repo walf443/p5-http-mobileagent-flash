@@ -1,10 +1,7 @@
 use strict;
 use Test::Base;
 
-# plan tests => 1*blocks;
-#no_plan;
-plan tests => 1*blocks;
-use Data::Dumper;
+plan tests => 31;
 
 use_ok 'HTTP::MobileAgent';
 use_ok 'HTTP::MobileAgent::Flash';
@@ -17,12 +14,11 @@ filters {
 
 run {
     my $block = shift;
+
     local *ENV = $block->env;
-
-
     my $agent = HTTP::MobileAgent->new();
-    is $block->is_flash, $agent->is_flash, $block->name . ": is_flash";
 
+    is $block->is_flash, $agent->is_flash, $block->name . ": is_flash";
     if ($block->is_flash) {
         while (my ($key, $value) = each %{$block->expected}) {
             is $block->expected->{$key}, $agent->flash->$key, $block->name . ": $key";
