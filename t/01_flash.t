@@ -1,67 +1,131 @@
 use strict;
-use Test::More tests => 32;
+use Test::Base;
+
+# plan tests => 1*blocks;
+#no_plan;
+plan tests => 1*blocks;
+use Data::Dumper;
 
 use_ok 'HTTP::MobileAgent';
 use_ok 'HTTP::MobileAgent::Flash';
 
-my @TESTS = (
-    [{HTTP_USER_AGENT => 'None Mobile'}, {}],
-    [{HTTP_USER_AGENT => 'DoCoMo/1.0/D405i/c20/TC/W20H10'}, {}],
-    [{HTTP_USER_AGENT => 'KDDI-TS21 UP.Browser/6.0.2.276 (GUI) MMP/1.1'}, {}],
-    [
-        {HTTP_USER_AGENT => 'DoCoMo/2.0 P902i(c100;TB;W24H12)'},
-        {version => '1.1'} 
-    ],
-    [
-        {HTTP_USER_AGENT => 'DoCoMo/2.0 N506iS(c100;TB;W24H12)'},
-        {version => '1.0'} 
-    ],
-    [
-        {
-            HTTP_USER_AGENT => 'KDDI-HI33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0',
-            HTTP_ACCEPT => 'application/x-shockwave-flash',
-            HTTP_X_UP_DEVCAP_SCREENPIXELS => '240,268',
-            HTTP_X_UP_DEVCAP_SCREENDEPTH  => '1',
-            HTTP_X_UP_DEVCAP_ISCOLOR      => 0,
-        },
-        {version => 1.1, max_file_size => 100, width => 240, height => 320}
-    ],
-    [
-        {
-            HTTP_USER_AGENT => 'KDDI-MA32 UP.Browser/6.2.0.12.1.4 (GUI) MMP/2.0',
-            HTTP_ACCEPT => 'application/x-shockwave-flash',
-            HTTP_X_UP_DEVCAP_SCREENPIXELS => '240,268',
-            HTTP_X_UP_DEVCAP_SCREENDEPTH  => '1',
-            HTTP_X_UP_DEVCAP_ISCOLOR      => 0,
-        },
-        {version => '2.0', max_file_size => 100, width => 240, height => 400}
-    ],
-);
+filters {
+    env      => ['yaml'],
+    expected => ['yaml'],
+    is_flash => [qw/chomp/],
+};
 
-for (@TESTS) {
-    my ($env, $check) = @$_;
-    local *ENV = $env;
+run {
+    my $block = shift;
+    local *ENV = $block->env;
 
-    my $agent = HTTP::MobileAgent->new;
-    my $flash = $agent->flash;
-    isa_ok $flash, 'HTTP::MobileAgent::Flash';
-    if ($agent->is_flash) {
-        for my $method (keys %$check) {
-            is(
-                $flash->$method(),
-                $check->{$method}, 
-                sprintf("%s : %s = %s", $agent->model, $method, $check->{$method})
-            );
+
+    my $agent = HTTP::MobileAgent->new();
+    is $block->is_flash, $agent->is_flash, $block->name . ": is_flash";
+
+    if ($block->is_flash) {
+        while (my ($key, $value) = each %{$block->expected}) {
+            is $block->expected->{$key}, $agent->flash->$key, $block->name . ": $key";
         }
-        my $version = $check->{version};
-        ok $agent->flash->is_supported($version), sprintf("%s : is_supported = %s", $agent->model, $version);
     }
-    else {
-        is scalar keys %$check, 0, sprintf("%s : none flash", $agent->model);
-        ok !$agent->flash->is_supported('0.0'), sprintf("%s : is_supported 0.0", $agent->model);
-    }
+};
 
-    if ($agent->flash->is_supported('1.1')) {
-        ok $agent->flash->is_supported(1.0), sprintf("%s : is_supported = 1.0", $agent->model);
-    }
-}
+__END__
+=== 922SH(SoftBank)
+--- is_flash
+1
+--- env
+  HTTP_USER_AGENT : SoftBank/1.0/922SH/SHJ001[ /Serial ] Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1
+--- expected
+  version        : 2.0
+  max_file_size  : 150
+  width          : 854
+  height         : 480
+
+
+=== W52P(au)
+--- is_flash
+1
+--- env
+  HTTP_USER_AGENT : KDDI-MA32 UP.Browser/6.2.0.12.1.4 (GUI) MMP/2.0
+  HTTP_ACCEPT                    : application/x-shockwave-flash
+  HTTP_X_UP_DEVCAP_SCREENPIXELS  : 240,268
+  HTTP_X_UP_DEVCAP_SCREENDEPTH   : 1
+  HTTP_X_UP_DEVCAP_ISCOLOR       : 0
+--- expected
+  version        : 2.0
+  max_file_size  : 100
+  width          : 240
+  height         : 400
+
+
+=== W22H(au)
+--- is_flash
+1
+--- env
+  HTTP_USER_AGENT : KDDI-HI33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+  HTTP_ACCEPT                    : application/x-shockwave-flash
+  HTTP_X_UP_DEVCAP_SCREENPIXELS  : 240,268
+  HTTP_X_UP_DEVCAP_SCREENDEPTH   : 1
+  HTTP_X_UP_DEVCAP_ISCOLOR       : 0
+--- expected
+  version         : 1.1
+  max_file_size   : 100
+  width           : 240
+  height          : 320
+
+
+=== W52P(au)
+--- is_flash
+1
+--- env
+  HTTP_USER_AGENT : KDDI-MA32 UP.Browser/6.2.0.12.1.4 (GUI) MMP/2.0
+  HTTP_ACCEPT                    : application/x-shockwave-flash
+  HTTP_X_UP_DEVCAP_SCREENPIXELS  : 240,268
+  HTTP_X_UP_DEVCAP_SCREENDEPTH   : 1
+  HTTP_X_UP_DEVCAP_ISCOLOR       : 0
+--- expected
+  version        : 2.0
+  max_file_size  : 100
+  width          : 240
+  height         : 400
+
+
+=== D506I(docomo)
+--- is_flash
+1
+--- env
+  HTTP_USER_AGENT : DoCoMo/1.0/D506i/c20/TB/W16H08 
+--- expected
+  version         : 1.0
+  width           : 240
+  height          : 320
+  max_file_size   : 300
+
+
+=== D405i(docomo)
+--- is_flash
+0
+--- env
+  HTTP_USER_AGENT : DoCoMo/1.0/D405i/c20/TC/W20H10
+
+
+=== C5001T(au)
+--- is_flash
+0
+--- env
+  HTTP_USER_AGENT : KDDI-TS21 UP.Browser/6.0.2.276 (GUI) MMP/1.1
+
+
+=== V501SH(softbank)
+--- is_flash
+0
+--- env
+  HTTP_USER_AGENT : J-PHONE/4.3/V501SH[/Serial] SH/0008aaProfile/MIDP-1.0 Configuration/CLDC-1.0 Ext-Profile/JSCL-1.3.2
+
+
+=== NONE_MOBILE
+--- is_flash
+0
+--- env
+  HTTP_USER_AGENT : Mozilla/5.0 (Macintosh; U; PPC Mac OS;)
