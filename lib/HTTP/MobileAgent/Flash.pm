@@ -7,6 +7,7 @@ $VERSION = '0.06_2';
 use HTTP::MobileAgent;
 use HTTP::MobileAgent::Flash::DoCoMoFlashMap;
 use HTTP::MobileAgent::Flash::EZWebFlashMap;
+use HTTP::MobileAgent::Flash::SoftBankFlashMap;
 
 use Carp;
 
