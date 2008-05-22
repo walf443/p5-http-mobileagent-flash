@@ -2,7 +2,7 @@ package HTTP::MobileAgent::Flash;
 use strict;
 use warnings;
 use vars qw($VERSION);
-$VERSION = '0.06_1';
+$VERSION = '0.06_2';
 
 use HTTP::MobileAgent;
 use HTTP::MobileAgent::Flash::DoCoMoFlashMap;
@@ -42,6 +42,9 @@ sub new {
     }
     elsif ($agent->is_ezweb) {
         $map = $HTTP::MobileAgent::Flash::EZWebFlashMap::FLASH_MAP->{uc($agent->model)};
+    }
+    elsif ($agent->is_softbank) {
+        $map = $HTTP::MobileAgent::Flash::SoftBankFlashMap::FLASH_MAP->{uc($agent->model)};
     }
 
     if ($map) {

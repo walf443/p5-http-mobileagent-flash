@@ -1,5 +1,8 @@
 Revision history for Perl extension HTTP::MobileAgent::FlashLite
 
+0.06_2  Thu May 22 14:16:40 2008
+    - FlashLite1.1 and FlashLite2.0 can have been distinguished in SoftBank. 
+
 0.06_1
     - Added D705I,D705IMYU,F705I,F883IESS,F884I,F905IBIZ,L705I,L705IX,
     N705I,N705IMYU,P705I,P705ICL,P705IMYU,P905ITV,SH705I,SH705III,SH905ITV,
