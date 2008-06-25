@@ -129,8 +129,8 @@ This module does not support the Vodafone, yet.
 =head1 SEE ALSO
 
 L<HTTP::MobileAgent>,
-L<http://www.nttdocomo.co.jp/p_s/imode/spec/flash.html>,
+L<http://www.nttdocomo.co.jp/service/imode/make/content/spec/flash/index.html>,
 L<http://www.au.kddi.com/ezfactory/mm/flash01.html>,
-L<http://developers.vodafone.jp/>
+L<http://creation.mb.softbank.jp/>
 
 =cut
