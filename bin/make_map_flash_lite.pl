@@ -8,8 +8,9 @@ use HTTP::MobileAgent;
 use WWW::MobileCarrierJP::DoCoMo::Flash;
 use WWW::MobileCarrierJP::EZWeb::DeviceID;
 use WWW::MobileCarrierJP::EZWeb::Model;
-use WWW::MobileCarrierJP::ThirdForce::UserAgent;
 use WWW::MobileCarrierJP::ThirdForce::Service;
+use WWW::MobileCarrierJP::ThirdForce::HTTPHeader;
+use WWW::MobileCarrierJP::ThirdForce::UserAgent;
 
 use Getopt::Long;
 use Pod::Usage;
@@ -220,6 +221,18 @@ sub make_map_softbank {
         };
     }
 
+    for my $device (@{WWW::MobileCarrierJP::ThirdForce::HTTPHeader->scrape()} ) {
+
+        my $model = $device->{model};
+
+        next unless ($flash_map->{$model});
+
+        my ($width, $height) = ($device->{'x-jphone-display'} =~ /^(\d+)\*(\d+)$/);
+        $flash_map->{$model}->{width}  = $width;
+        $flash_map->{$model}->{height} = $height;
+    }
+
+    # Webから取れてくるモデルには V がついてないコトがある対策。
     for my $device (@{WWW::MobileCarrierJP::ThirdForce::UserAgent->scrape()} ) {
         $device->{user_agent} =~ s/^\s+//g;
         $device->{user_agent} =~ s/\s+$//g;
@@ -238,9 +251,6 @@ sub make_map_softbank {
         else {
             next;
         }
-
-        $flash_map->{$model}->{width}  = $device->{display}->{width};
-        $flash_map->{$model}->{height} = $device->{display}->{height};
     }
 
     return  $flash_map;

@@ -1,12 +1,17 @@
+bin/.make_map_flash_lite.pl.swp
 bin/make_map_flash_lite.pl
 Changes
+HTTP-MobileAgent-Flash-0.06.tar.gz
 lib/HTTP/MobileAgent/Flash.pm
+lib/HTTP/MobileAgent/Flash/.SoftBankFlashMap.pm.swp
 lib/HTTP/MobileAgent/Flash/DoCoMoFlashMap.pm
 lib/HTTP/MobileAgent/Flash/EZWebFlashMap.pm
+lib/HTTP/MobileAgent/Flash/SoftBankFlashMap.pm
 Makefile.PL
 MANIFEST
 META.yml			Module meta-data (added by MakeMaker)
 README
+t/.01_flash.t_.swp
 t/00_compile.t
 t/01_flash.t
 t/02_yaml_syck.t
