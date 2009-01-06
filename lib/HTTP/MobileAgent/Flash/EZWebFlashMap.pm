@@ -577,6 +577,12 @@ $FLASH_MAP ||= {
         height         => '432',
         max_file_size  => '100',
     },
+    'SN3H' => {
+        version        => '2.0',
+        width          => '240',
+        height         => '320',
+        max_file_size  => '100',
+    },
     'ST24' => {
         version        => '1.1',
         width          => '240',
