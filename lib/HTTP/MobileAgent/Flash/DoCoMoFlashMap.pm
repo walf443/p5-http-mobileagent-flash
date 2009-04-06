@@ -187,6 +187,12 @@ $FLASH_MAP ||= {
         height         => '960',
         max_file_size  => '3072',
     },
+    'F-04A' => {
+        version        => '3.0',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '3072',
+    },
     'F-05A' => {
         version        => '1.1',
         width          => '240',
@@ -197,6 +203,12 @@ $FLASH_MAP ||= {
         version        => '3.0',
         width          => '480',
         height         => '864',
+        max_file_size  => '3072',
+    },
+    'F-07A' => {
+        version        => '3.0',
+        width          => '240',
+        height         => '320',
         max_file_size  => '3072',
     },
     'F505I' => {
@@ -397,6 +409,12 @@ $FLASH_MAP ||= {
         height         => '400',
         max_file_size  => '3072',
     },
+    'L-03A' => {
+        version        => '1.1',
+        width          => '240',
+        height         => '320',
+        max_file_size  => '3072',
+    },
     'L704I' => {
         version        => '1.1',
         width          => '240',
@@ -461,6 +479,12 @@ $FLASH_MAP ||= {
         version        => '3.1',
         width          => '480',
         height         => '854',
+        max_file_size  => '3072',
+    },
+    'N-05A' => {
+        version        => '3.0',
+        width          => '240',
+        height         => '427',
         max_file_size  => '3072',
     },
     'N505I' => {
@@ -703,6 +727,24 @@ $FLASH_MAP ||= {
         height         => '427',
         max_file_size  => '3072',
     },
+    'P-04A' => {
+        version        => '3.1',
+        width          => '240',
+        height         => '427',
+        max_file_size  => '3072',
+    },
+    'P-05A' => {
+        version        => '3.1',
+        width          => '240',
+        height         => '427',
+        max_file_size  => '3072',
+    },
+    'P-06A' => {
+        version        => '3.0',
+        width          => '240',
+        height         => '427',
+        max_file_size  => '3072',
+    },
     'P505I' => {
         version        => '1.0',
         width          => '240',
@@ -926,6 +968,12 @@ $FLASH_MAP ||= {
         max_file_size  => '3072',
     },
     'SH-03A' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '3072',
+    },
+    'SH-04A' => {
         version        => '3.1',
         width          => '480',
         height         => '854',
