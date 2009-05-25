@@ -1,5 +1,14 @@
 Revision history for Perl extension HTTP::MobileAgent::FlashLite
 
+0.07 Mon May 25 13:47:39 2009
+  - Added N-06A, N-08A, P-07A
+    in HTTP::MobileAgent::Flash::DoCoMoFlashMap (auto-generated)
+  - Added CA001, E05SH, G9[iida], H001, K001, NS01, NS02, P001, Premier3,
+    S001, SH001, T001
+    in HTTP::MobileAgent::Flash::EZWebFlashMap (auto-generated)
+  - Added 830N, 831P, 831SH, 930CA, 930P, 932SH
+    in HTTP::MobileAgent::Flash::SoftBankFlashMap (auto-generated)
+
 0.06 Fri Nov  7 19:20:28 2008
     - FlashLite1.1 and FlashLite2.0 can have been distinguished in SoftBank. 
     - Added F-01A,F706I,F883IS,F884IES,F906I,L706IE,L852I,N706I,N706IE,

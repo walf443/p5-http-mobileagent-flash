@@ -235,6 +235,12 @@ $FLASH_MAP ||= {
         height         => '427',
         max_file_size  => '150',
     },
+    '830N' => {
+        version        => '3.0',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '150',
+    },
     '830P' => {
         version        => '2.0',
         width          => '240',
@@ -249,6 +255,18 @@ $FLASH_MAP ||= {
     },
     '830T' => {
         version        => '2.0',
+        width          => '240',
+        height         => '400',
+        max_file_size  => '150',
+    },
+    '831P' => {
+        version        => '2.0',
+        width          => '240',
+        height         => '427',
+        max_file_size  => '150',
+    },
+    '831SH' => {
+        version        => '3.0',
         width          => '240',
         height         => '400',
         max_file_size  => '150',
@@ -355,6 +373,18 @@ $FLASH_MAP ||= {
         height         => '854',
         max_file_size  => '150',
     },
+    '930CA' => {
+        version        => '3.0',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '150',
+    },
+    '930P' => {
+        version        => '3.0',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '150',
+    },
     '930SC' => {
         version        => '3.0',
         width          => '480',
@@ -371,6 +401,12 @@ $FLASH_MAP ||= {
         version        => '3.0',
         width          => '480',
         height         => '1024',
+        max_file_size  => '150',
+    },
+    '932SH' => {
+        version        => '3.0',
+        width          => '480',
+        height         => '854',
         max_file_size  => '150',
     },
     'DM001SH' => {
