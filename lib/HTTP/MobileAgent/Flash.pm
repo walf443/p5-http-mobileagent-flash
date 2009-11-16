@@ -2,7 +2,7 @@ package HTTP::MobileAgent::Flash;
 use strict;
 use warnings;
 use vars qw($VERSION);
-$VERSION = '0.07';
+$VERSION = '0.08';
 
 use HTTP::MobileAgent;
 use HTTP::MobileAgent::Flash::DoCoMoFlashMap;

@@ -5,7 +5,9 @@ inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
 inc/Module/Install/Fetch.pm
 inc/Module/Install/Makefile.pm
+inc/Module/Install/Makefile/Name.pm
 inc/Module/Install/Metadata.pm
+inc/Module/Install/Scripts.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/HTTP/MobileAgent/Flash.pm
@@ -15,7 +17,6 @@ lib/HTTP/MobileAgent/Flash/SoftBankFlashMap.pm
 Makefile
 Makefile.PL
 MANIFEST
-MANIFEST.bak
 MANIFEST.SKIP
 META.yml			Module meta-data (added by MakeMaker)
 README

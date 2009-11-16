@@ -1,5 +1,18 @@
 Revision history for Perl extension HTTP::MobileAgent::FlashLite
 
+0.08 Mon Nov 16 14:11:29 2009
+  - Added F-01B, F-02B, F-08A, F-09A, F-10A, L-04A, L-06A, N-07A, 
+    N-09A, P-08A, P-09A, P-10A, SH-01B, SH-05A, SH-06A, SH-07A, SH-08A
+    in HTTP::MobileAgent::Flash::DoCoMoFlashMap (auto-generated)
+  - Added CA002, CA003, CA004, Mobile Hi-Vision CAM Wooo, K002, 
+    K003, misora[iida], SA001, E07K, E06SH, SH002, Sportio water beat, 
+    SH003, S002, biblio, T002, PLY[iida], T003
+    in HTTP::MobileAgent::Flash::EZWebFlashMap (auto-generated)
+  - Added 831N, 832P, 832SH, 832T, 930N, 931P, 931SC, 933SH, 
+    934SH, 935SH, 936SH, DM004SH
+    in HTTP::MobileAgent::Flash::SoftBankFlashMap (auto-generated)
+  - MAKEFILE.PL was changed to modern age. (Thanks to Keiji, Yoshimi)
+
 0.07 Mon May 25 13:47:39 2009
   - Added N-06A, N-08A, P-07A
     in HTTP::MobileAgent::Flash::DoCoMoFlashMap (auto-generated)
