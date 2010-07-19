@@ -3,6 +3,7 @@ use strict;
 use warnings;
 use vars qw($VERSION);
 $VERSION = '0.08';
+use 5.008001;
 
 use HTTP::MobileAgent;
 use HTTP::MobileAgent::Flash::DoCoMoFlashMap;
