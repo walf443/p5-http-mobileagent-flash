@@ -5,10 +5,12 @@ use warnings;
 
 use HTTP::MobileAgent;
 
+use WWW::MobileCarrierJP 0.45;
 use WWW::MobileCarrierJP::DoCoMo::Flash;
 use WWW::MobileCarrierJP::EZWeb::DeviceID;
 use WWW::MobileCarrierJP::EZWeb::Model;
 use WWW::MobileCarrierJP::ThirdForce::Service;
+use WWW::MobileCarrierJP::ThirdForce::Flash;
 use WWW::MobileCarrierJP::ThirdForce::HTTPHeader;
 use WWW::MobileCarrierJP::ThirdForce::UserAgent;
 
@@ -203,7 +205,7 @@ sub make_map_softbank {
     #    HTTP::MobileAgent では V703SHf
     #
     my $flash_map;
-    for my $device (@{WWW::MobileCarrierJP::ThirdForce::Service->scrape()}) {
+    for my $device (@{WWW::MobileCarrierJP::ThirdForce::Flash->scrape()}) {
         if (
             !$device->{flashlite}                  or
             $device->{flashlite} !~ /^\d+(\.\d+)/  or

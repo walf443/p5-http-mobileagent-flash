@@ -286,7 +286,7 @@ $FLASH_MAP ||= {
     '832P' => {
         version        => '3.0',
         width          => '240',
-        height         => '400',
+        height         => '427',
         max_file_size  => '150',
     },
     '832SH' => {
@@ -299,6 +299,42 @@ $FLASH_MAP ||= {
         version        => '2.0',
         width          => '240',
         height         => '320',
+        max_file_size  => '150',
+    },
+    '840P' => {
+        version        => '2.0',
+        width          => '240',
+        height         => '427',
+        max_file_size  => '150',
+    },
+    '840SC' => {
+        version        => '3.1',
+        width          => '240',
+        height         => '400',
+        max_file_size  => '150',
+    },
+    '840SH' => {
+        version        => '3.0',
+        width          => '240',
+        height         => '400',
+        max_file_size  => '150',
+    },
+    '841P' => {
+        version        => '2.0',
+        width          => '240',
+        height         => '427',
+        max_file_size  => '150',
+    },
+    '841SH' => {
+        version        => '3.1',
+        width          => '240',
+        height         => '400',
+        max_file_size  => '150',
+    },
+    '842P' => {
+        version        => '3.0',
+        width          => '240',
+        height         => '427',
         max_file_size  => '150',
     },
     '910SH' => {
@@ -416,12 +452,18 @@ $FLASH_MAP ||= {
         max_file_size  => '150',
     },
     '930SC' => {
-        version        => '3.0',
+        version        => '3.1',
         width          => '480',
         height         => '800',
         max_file_size  => '150',
     },
     '930SH' => {
+        version        => '3.0',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '150',
+    },
+    '931N' => {
         version        => '3.0',
         width          => '480',
         height         => '854',
@@ -434,7 +476,7 @@ $FLASH_MAP ||= {
         max_file_size  => '150',
     },
     '931SC' => {
-        version        => '3.0',
+        version        => '3.1',
         width          => '480',
         height         => '800',
         max_file_size  => '150',
@@ -475,6 +517,66 @@ $FLASH_MAP ||= {
         height         => '854',
         max_file_size  => '150',
     },
+    '940N' => {
+        version        => '3.0',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '150',
+    },
+    '940P' => {
+        version        => '3.0',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '150',
+    },
+    '940SC' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '800',
+        max_file_size  => '150',
+    },
+    '940SH' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '150',
+    },
+    '941P' => {
+        version        => '3.0',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '150',
+    },
+    '941SH' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '1024',
+        max_file_size  => '150',
+    },
+    '942SH' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '150',
+    },
+    '943SH' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '150',
+    },
+    '944SH' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '150',
+    },
+    '945SH' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '150',
+    },
     'DM001SH' => {
         version        => '2.0',
         width          => '240',
@@ -494,6 +596,18 @@ $FLASH_MAP ||= {
         max_file_size  => '150',
     },
     'DM004SH' => {
+        version        => '3.0',
+        width          => '240',
+        height         => '400',
+        max_file_size  => '150',
+    },
+    'DM005SH' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '150',
+    },
+    'DM006SH' => {
         version        => '3.0',
         width          => '240',
         height         => '400',
@@ -556,7 +670,7 @@ $FLASH_MAP ||= {
     'V905SH' => {
         version        => '1.1',
         width          => '240',
-        height         => '320',
+        height         => '400',
         max_file_size  => '100',
     },
 };
