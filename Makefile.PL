@@ -29,6 +29,7 @@ pm_softbank:
 
 GENERATE_PM
 
+use_test_base;
 WriteAll;
 
 
