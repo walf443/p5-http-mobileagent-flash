@@ -301,6 +301,12 @@ $FLASH_MAP ||= {
         height         => '320',
         max_file_size  => '150',
     },
+    '840N' => {
+        version        => '3.0',
+        width          => '240',
+        height         => '427',
+        max_file_size  => '150',
+    },
     '840P' => {
         version        => '2.0',
         width          => '240',
@@ -335,6 +341,12 @@ $FLASH_MAP ||= {
         version        => '3.0',
         width          => '240',
         height         => '427',
+        max_file_size  => '150',
+    },
+    '842SH' => {
+        version        => '3.1',
+        width          => '240',
+        height         => '400',
         max_file_size  => '150',
     },
     '910SH' => {
@@ -551,6 +563,12 @@ $FLASH_MAP ||= {
         version        => '3.1',
         width          => '480',
         height         => '1024',
+        max_file_size  => '150',
+    },
+    '942P' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
         max_file_size  => '150',
     },
     '942SH' => {
