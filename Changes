@@ -1,5 +1,8 @@
 Revision history for Perl extension HTTP::MobileAgent::FlashLite
 
+0.10  Mon Aug  9 09:31:09 JST 2010
+  - update FlashMap.
+
 0.09  Thu Jul 29 12:46:42 JST 2010
   - fixed problem that softbank website change (thanks tokuhirom)
 
