@@ -1,5 +1,8 @@
 Revision history for Perl extension HTTP::MobileAgent::FlashLite
 
+0.09  Thu Jul 29 12:46:42 JST 2010
+  - fixed problem that softbank website change (thanks tokuhirom)
+
 0.08 Mon Nov 16 14:11:29 2009
   - Added F-01B, F-02B, F-08A, F-09A, F-10A, L-04A, L-06A, N-07A, 
     N-09A, P-08A, P-09A, P-10A, SH-01B, SH-05A, SH-06A, SH-07A, SH-08A
