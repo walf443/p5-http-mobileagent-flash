@@ -427,6 +427,12 @@ $FLASH_MAP ||= {
         height         => '400',
         max_file_size  => '100',
     },
+    'KC3Z' => {
+        version        => '2.0',
+        width          => '240',
+        height         => '400',
+        max_file_size  => '100',
+    },
     'MA31' => {
         version        => '2.0',
         width          => '240',
