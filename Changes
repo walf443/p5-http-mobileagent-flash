@@ -1,5 +1,8 @@
 Revision history for Perl extension HTTP::MobileAgent::FlashLite
 
+0.11 Wed Sep  8 10:57:00 JST 2010
+  - update added -10B, P-07B, KC3Z, 841N, 843SH, 941SC
+
 0.10  Mon Aug  9 09:31:09 JST 2010
   - update FlashMap.
 
