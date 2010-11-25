@@ -1,5 +1,11 @@
 Revision history for Perl extension HTTP::MobileAgent::FlashLite
 
+0.12 Thu Nov 25 10:54:36 JST 2010
+  - update FlashMap
+  -- DoCoMoFlashMap: F-01C, F-02C, F-03C, N-01C, N-02C, P-01C, P-02C,SH-01C, SH-02C
+  -- EZWebFlashMap: CA3I, KC41, SH3J, SH3K, SN3Q, SN3R, TS3V, TS3W
+  -- SoftBankFlashMap: 001N, 001SH, 840Z, DM007SH
+
 0.11 Wed Sep  8 10:57:00 JST 2010
   - update added -10B, P-07B, KC3Z, 841N, 843SH, 941SC
 
