@@ -1,7 +1,7 @@
 use strict;
 use Test::Base;
 
-plan tests => 31;
+plan tests => 30;
 
 use_ok 'HTTP::MobileAgent';
 use_ok 'HTTP::MobileAgent::Flash';
@@ -111,14 +111,6 @@ __END__
 0
 --- env
   HTTP_USER_AGENT : KDDI-TS21 UP.Browser/6.0.2.276 (GUI) MMP/1.1
-
-
-=== V501SH(softbank)
---- is_flash
-0
---- env
-  HTTP_USER_AGENT : J-PHONE/4.3/V501SH[/Serial] SH/0008aaProfile/MIDP-1.0 Configuration/CLDC-1.0 Ext-Profile/JSCL-1.3.2
-
 
 === NONE_MOBILE
 --- is_flash
