@@ -43,6 +43,12 @@ $FLASH_MAP ||= {
         height         => '400',
         max_file_size  => '150',
     },
+    '002SH' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '150',
+    },
     '810P' => {
         version        => '2.0',
         width          => '240',

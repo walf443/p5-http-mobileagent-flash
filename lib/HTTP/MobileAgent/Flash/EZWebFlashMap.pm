@@ -151,6 +151,12 @@ $FLASH_MAP ||= {
         height         => '854',
         max_file_size  => '100',
     },
+    'CA3J' => {
+        version        => '3.0',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '100',
+    },
     'HI33' => {
         version        => '1.1',
         width          => '240',
