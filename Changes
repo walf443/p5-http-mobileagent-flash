@@ -1,5 +1,8 @@
 Revision history for Perl extension HTTP::MobileAgent::FlashLite
 
+0.14 Wed Feb  2 06:16:03 JST 2011
+  - update flash_map.
+
 0.13 Tue Dec 21 08:34:06 JST 2010
   - update flash_map
   -- DoCoMoFlashMap: added L-01C, P-03C, SH04-C,
