@@ -49,6 +49,12 @@ $FLASH_MAP ||= {
         height         => '854',
         max_file_size  => '150',
     },
+    '004SH' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '150',
+    },
     '810P' => {
         version        => '2.0',
         width          => '240',
@@ -677,6 +683,12 @@ $FLASH_MAP ||= {
         version        => '3.1',
         width          => '480',
         height         => '854',
+        max_file_size  => '150',
+    },
+    'DM008SH' => {
+        version        => '3.1',
+        width          => '240',
+        height         => '400',
         max_file_size  => '150',
     },
     'V703SH' => {

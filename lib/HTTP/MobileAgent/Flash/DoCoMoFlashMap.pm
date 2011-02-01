@@ -235,6 +235,12 @@ $FLASH_MAP ||= {
         height         => '960',
         max_file_size  => '15360',
     },
+    'F-04C' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '15360',
+    },
     'F-05A' => {
         version        => '1.1',
         width          => '240',
@@ -529,6 +535,12 @@ $FLASH_MAP ||= {
         height         => '400',
         max_file_size  => '3072',
     },
+    'L-03C' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '800',
+        max_file_size  => '15360',
+    },
     'L-04A' => {
         version        => '1.1',
         width          => '480',
@@ -632,6 +644,12 @@ $FLASH_MAP ||= {
         max_file_size  => '3072',
     },
     'N-03B' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '15360',
+    },
+    'N-03C' => {
         version        => '3.1',
         width          => '480',
         height         => '854',
@@ -1333,6 +1351,12 @@ $FLASH_MAP ||= {
         height         => '854',
         max_file_size  => '15360',
     },
+    'SH-05C' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '15360',
+    },
     'SH-06A' => {
         version        => '3.1',
         width          => '480',
@@ -1340,6 +1364,12 @@ $FLASH_MAP ||= {
         max_file_size  => '15360',
     },
     'SH-06B' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '15360',
+    },
+    'SH-06C' => {
         version        => '3.1',
         width          => '480',
         height         => '854',
