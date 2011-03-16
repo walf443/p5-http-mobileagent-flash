@@ -7,7 +7,6 @@ recommends 'WWW::MobileCarrierJP' => 0.45;
 requires 'HTTP::MobileAgent' => 0;
 requires 'Class::Accessor' => 0;
 
-
 my $make_map_script = 'bin/make_map_flash_lite.pl';
 install_script $make_map_script;
 
