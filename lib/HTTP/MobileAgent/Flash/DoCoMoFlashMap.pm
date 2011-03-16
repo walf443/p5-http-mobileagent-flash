@@ -247,6 +247,12 @@ $FLASH_MAP ||= {
         height         => '432',
         max_file_size  => '2048',
     },
+    'F-05C' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '15360',
+    },
     'F-06A' => {
         version        => '3.0',
         width          => '480',
@@ -1399,7 +1405,19 @@ $FLASH_MAP ||= {
         height         => '854',
         max_file_size  => '15360',
     },
+    'SH-08C' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '15360',
+    },
     'SH-09B' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '15360',
+    },
+    'SH-09C' => {
         version        => '3.1',
         width          => '480',
         height         => '854',
