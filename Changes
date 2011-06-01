@@ -1,5 +1,8 @@
 Revision history for Perl extension HTTP::MobileAgent::FlashLite
 
+0.16
+  - update FlashMap
+
 0.15 
   - update FlashMap
   -- DoCoMo: added F-05C, SH-08C, SH-09C
