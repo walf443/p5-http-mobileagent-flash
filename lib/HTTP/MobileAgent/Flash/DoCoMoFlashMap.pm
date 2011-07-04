@@ -307,6 +307,12 @@ $FLASH_MAP ||= {
         height         => '800',
         max_file_size  => '3072',
     },
+    'F-09C' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '15360',
+    },
     'F-10A' => {
         version        => '3.0',
         width          => '240',
@@ -320,6 +326,12 @@ $FLASH_MAP ||= {
         max_file_size  => '15360',
     },
     'F-10C' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '15360',
+    },
+    'F-11C' => {
         version        => '3.1',
         width          => '480',
         height         => '854',
@@ -697,6 +709,12 @@ $FLASH_MAP ||= {
         height         => '854',
         max_file_size  => '15360',
     },
+    'N-05C' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '15360',
+    },
     'N-06A' => {
         version        => '3.1',
         width          => '480',
@@ -1022,6 +1040,12 @@ $FLASH_MAP ||= {
         max_file_size  => '3072',
     },
     'P-04B' => {
+        version        => '3.1',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '15360',
+    },
+    'P-04C' => {
         version        => '3.1',
         width          => '480',
         height         => '854',
