@@ -1249,6 +1249,18 @@ $FLASH_MAP ||= {
         height         => '854',
         max_file_size  => '100',
     },
+    'TS3Z' => {
+        version        => '3.0',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '100',
+    },
+    'TS41' => {
+        version        => '3.0',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '48',
+    },
 };
 
 1;
