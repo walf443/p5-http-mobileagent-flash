@@ -1,5 +1,9 @@
 Revision history for Perl extension HTTP::MobileAgent::FlashLite
 
+0.19
+  - update flashmap
+  - does not use Module::Install::TestBase.
+
 0.18
   - update flashmap
 
