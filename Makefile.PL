@@ -3,6 +3,8 @@ use inc::Module::Install;
 all_from 'lib/HTTP/MobileAgent/Flash.pm';
 
 test_requires 'Test::More' => 0.32;
+test_requires 'Test::Base';
+
 recommends 'WWW::MobileCarrierJP' => 0.61;
 requires 'HTTP::MobileAgent' => 0;
 requires 'Class::Accessor' => 0;
@@ -28,7 +30,6 @@ pm_softbank:
 
 GENERATE_PM
 
-use_test_base;
 WriteAll;
 
 
