@@ -487,6 +487,12 @@ $FLASH_MAP ||= {
         height         => '854',
         max_file_size  => '48',
     },
+    'KC48' => {
+        version        => '2.0',
+        width          => '240',
+        height         => '400',
+        max_file_size  => '48',
+    },
     'MA31' => {
         version        => '2.0',
         width          => '240',
@@ -938,6 +944,12 @@ $FLASH_MAP ||= {
         max_file_size  => '100',
     },
     'SN3U' => {
+        version        => '3.0',
+        width          => '480',
+        height         => '854',
+        max_file_size  => '100',
+    },
+    'SN3V' => {
         version        => '3.0',
         width          => '480',
         height         => '854',
