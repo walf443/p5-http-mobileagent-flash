@@ -3,7 +3,7 @@ use inc::Module::Install;
 all_from 'lib/HTTP/MobileAgent/Flash.pm';
 
 test_requires 'Test::More' => 0.32;
-recommends 'WWW::MobileCarrierJP' => 0.45;
+recommends 'WWW::MobileCarrierJP' => 0.61;
 requires 'HTTP::MobileAgent' => 0;
 requires 'Class::Accessor' => 0;
 
