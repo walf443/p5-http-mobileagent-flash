@@ -2,7 +2,7 @@ package HTTP::MobileAgent::Flash;
 use strict;
 use warnings;
 use vars qw($VERSION);
-$VERSION = '0.19';
+$VERSION = '0.20';
 use 5.008001;
 
 use HTTP::MobileAgent;
